@@ -47,6 +47,10 @@ class User(AbstractBaseUser):
 
     objects = UserManager()
 
+    @property
+    def id(self):
+        return self.pk
+
     def has_perm(self, perm, obj=None):
         """
         Does the user have a specific permission?
